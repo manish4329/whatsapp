@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
@@ -6,12 +6,17 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
+      colors: {
+        'whatsapp-light': '#F0F2F5',
+        'whatsapp-dark': '#242E34',
+        'whatsapp-chats-bg': '#131B20',
+      },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'whatsapp-img-light': './public/whatsapp-login-page-light.png',
+        'whatsapp-img-dark': './public/whatsapp-login-page-light.png',
       },
     },
   },
