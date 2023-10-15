@@ -33,7 +33,7 @@ const DropDownChat: React.FC = () => {
     setOpen((prevOpen) => !prevOpen);
   };
   const handleClose = () => {
-    setOpen((prevOpen) => !prevOpen);
+    setOpen(false);
   };
   const handleMenuItemClick = () => {
     console.log("handleMenuItemClick");

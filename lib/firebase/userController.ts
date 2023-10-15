@@ -40,8 +40,7 @@ export function getSnapshotDoc(doc: DocumentData) {
 
 export const getSingleUserFromFirestore = async (userId: string) => {
   if (!userId) return;
-  const userRef = doc(firestore, `/users/FeOvPgrqC2bLFceUcUuo`);
-  console.log(userRef);
+  const userRef = doc(firestore, `users/${userId}`);
   const userSnap = await getDoc(userRef);
   if (userSnap.exists()) {
     const user = userSnap.data();
