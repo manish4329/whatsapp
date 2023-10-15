@@ -19,11 +19,16 @@ const MessageInput: React.FC = () => {
       <IconButton>
         <Add />
       </IconButton>
-      <form className="flex flex-row w-full" onSubmit={sendMessage}>
+      <form
+        name="messageInput"
+        className="flex flex-row w-full"
+        onSubmit={sendMessage}
+      >
         <IconButton>
           <Mood />
         </IconButton>
         <input
+          name="message"
           type="text"
           placeholder="Type a message"
           className="w-full rounded-lg p-2 outline-none"
