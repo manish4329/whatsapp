@@ -38,7 +38,7 @@ const SidebarHeader: React.FC = () => {
       </IconButton>
       <IconButton>
         <AppModel
-          icon={<ChatOutlined />}
+          icon={<ChatOutlined className="absolute top-0 left-0" />}
           title="All contacts"
           modalType="chat"
         />

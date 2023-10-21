@@ -45,8 +45,6 @@ const MainSrceenHeader: React.FC = () => {
         console.log(err.message);
       });
   }, [params?.id]);
-
-  console.log(contactInfo, "contactInfo");
   return (
     <div className="sticky top-0 p-4 border-b border-y-gray-200 bg-whatsapp-light dark:bg-whatsapp-dark z-10 flex items-center justify-between">
       {contactInfo ? (

@@ -1,3 +1,4 @@
+"use client";
 import { Box, Modal } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { boxStyle, handleModalChildren } from "./helper";
@@ -28,16 +29,14 @@ const AppModel: React.FC<props> = ({ icon, title, modalType }) => {
   );
 
   return (
-    <div>
-      <div onClick={handleOpen}>
-        {icon}
-        <Modal open={open} onClose={handleClose}>
-          <Box sx={boxStyle}>
-            <h1 className="text-xl font-bold">{title}</h1>
-            {handleModalChildren(modalType, contacts, handleClose)}
-          </Box>
-        </Modal>
-      </div>
+    <div className="relative w-6 h-6" onClick={handleOpen}>
+      {icon}
+      <Modal open={open} onClose={handleClose}>
+        <Box sx={boxStyle}>
+          <h1 className="text-xl font-bold">{title}</h1>
+          {handleModalChildren(modalType, contacts, handleClose)}
+        </Box>
+      </Modal>
     </div>
   );
 };

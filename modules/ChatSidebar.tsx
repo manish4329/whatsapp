@@ -4,6 +4,7 @@ import React from "react";
 import Archived from "@/components/Sidebar/Archived";
 import { AllUsers, AllUsersType } from "@/types";
 import Chat from "@/components/Sidebar/Chat";
+import FirestoreChats from "@/components/Sidebar/FirestoreChats";
 
 type Props = {
   data: AllUsers;
@@ -16,6 +17,7 @@ const ChatSidebar: React.FC<Props> = ({ data }) => {
       <SidebarHeader />
       <Search />
       <Archived />
+      <FirestoreChats />
       {/* chats */}
       <div className="bg-white dark:bg-whatsapp-chats-bg">
         {!!users &&

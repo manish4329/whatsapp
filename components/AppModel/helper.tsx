@@ -49,8 +49,8 @@ export function formatDate(arg1: unknown): string {
   // doing the type at runtime instead of compile time
   if (typeof arg1 === "number") {
     // convert unix timestamp to date
-    const d = new Date(arg1 * 1000);
-    const fullDate = d.toLocaleString();
+    const d = new Date(arg1);
+    const fullDate = d.toISOString();
     const dateOnly = fullDate.split(",")[0];
     const timeOnly = dateOnly.split(",")[1];
     return `${timeOnly}`;
