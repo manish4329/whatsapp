@@ -10,31 +10,21 @@ import {
   Popper,
 } from "@mui/material";
 import React, { useRef, useState } from "react";
+import SignOutButton from "./SignOutButton";
 
-const options = [
-  "New group",
-  "New community",
-  "Starred messages",
-  "Select chats",
-  "Settings",
-  "Log out",
-];
+const options = [<SignOutButton />];
 
 const DropDownProfile: React.FC = () => {
   const [open, setOpen] = useState(false);
   const anchorRef = useRef(null);
-  const handleClick = () => {
-    console.log("Handle Click");
-  };
+
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
   };
   const handleClose = () => {
-    setOpen((prevOpen) => !prevOpen);
+    setOpen(false);
   };
-  const handleMenuItemClick = () => {
-    console.log("handleMenuItemClick");
-  };
+  const handleMenuItemClick = () => {};
 
   return (
     <>
@@ -71,7 +61,7 @@ const DropDownProfile: React.FC = () => {
                 <MenuList id="split-button-menu" autoFocusItem>
                   {options.map((option, index) => (
                     <MenuItem
-                      key={option}
+                      key={index}
                       selected={index === 0}
                       onClick={() => handleMenuItemClick()}
                     >

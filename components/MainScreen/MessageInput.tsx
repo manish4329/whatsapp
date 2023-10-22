@@ -8,7 +8,7 @@ import React, { useState } from "react";
 const MessageInput: React.FC = () => {
   const params = useParams();
   const [message, setMessage] = useState("");
-  const sendMessage = (e: React.FormEvent<HTMLFormElement>) => {
+  const sendMessage = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (message === "") return;
     createNewChat(message, params?.id);

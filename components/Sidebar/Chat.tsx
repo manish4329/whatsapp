@@ -1,4 +1,5 @@
 "use client";
+
 import { AllUsersType } from "@/types";
 import { DocumentData } from "firebase/firestore";
 import Image from "next/image";
@@ -22,9 +23,9 @@ const Chat: React.FC<Props> = ({ data, chatData }) => {
   useEffect(() => {
     filterContact()
       .then((res: DocumentData | undefined) => setChatInfo(res))
-      .catch((err) => "Error");
+      .catch((err) => err);
   }, [filterContact]);
-  console.log(chatInfo, "chatInfo");
+
   return (
     <div className="flex justify-between items-center py-4 px-6 bg-white dark:bg-whatsapp-chats-bg border-b border-gray-400 hover:bg-gray-200 overflow-hidden cursor-pointer">
       <div className="flex justify-start items-center gap-4">

@@ -10,18 +10,9 @@ import {
   Popper,
 } from "@mui/material";
 import React, { useRef, useState } from "react";
+import SignOutButton from "./SignOutButton";
 
-const options = [
-  "Contact info",
-  "Select messages",
-  "Close chat",
-  "Mute notifications",
-  "Disappearing messages",
-  "Clear chat",
-  "Delete chat",
-  "Report",
-  "Block",
-];
+const options = [<SignOutButton />];
 
 const DropDownChat: React.FC = () => {
   const [open, setOpen] = useState(false);
@@ -74,7 +65,7 @@ const DropDownChat: React.FC = () => {
                 <MenuList id="split-button-menu" autoFocusItem>
                   {options.map((option, index) => (
                     <MenuItem
-                      key={option}
+                      key={index}
                       selected={index === 0}
                       onClick={() => handleMenuItemClick()}
                     >

@@ -7,6 +7,7 @@ import { DocumentData, onSnapshot } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import Chat from "./Chat";
 import { ChatMessageType } from "@/types";
+import Link from "next/link";
 
 const FirestoreChats: React.FC = () => {
   // Fetch with useEffect
@@ -26,14 +27,17 @@ const FirestoreChats: React.FC = () => {
     <div>
       {!!chats &&
         chats
-          ?.filter((chat: DocumentData) => {
-            chat?.messages.message?.some((item: ChatMessageType) => {
-              item?.messageSenderId === auth?.currentUser?.uid ||
-                item?.messageRecipientId === auth?.currentUser?.uid;
-            });
-          })
+          ?.filter((chat: DocumentData) =>
+            chat?.messages.message?.some(
+              (item: ChatMessageType) =>
+                item?.messageSenderId === auth?.currentUser?.uid ||
+                item?.messageRecipientId === auth?.currentUser?.uid
+            )
+          )
           .map((chat: DocumentData, index: number) => (
-            <Chat key={index} chatData={chat} />
+            <Link href={`/chat/${chat?.link}`} key={index}>
+              <Chat chatData={chat} />
+            </Link>
           ))}
     </div>
   );

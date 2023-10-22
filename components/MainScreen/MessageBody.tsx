@@ -7,8 +7,8 @@ import React, { useEffect, useRef, useState } from "react";
 import Messages from "./Messages";
 
 const MessageBody: React.FC = () => {
-  const [dataList, setDataList] = useState<DocumentData>([]);
   const params = useParams();
+  const [dataList, setDataList] = useState<DocumentData>([]);
   const lastMessageRef = useRef<HTMLDivElement>(null);
 
   const scrollDownPage = (ref: React.RefObject<HTMLDivElement>) => {
@@ -27,6 +27,8 @@ const MessageBody: React.FC = () => {
       }, 10);
     });
   }, [params?.id]);
+
+  console.log(dataList, "datalist");
   return (
     <div
       className={`overflow-y-auto flex flex-col min-h-screen justify-end bg-[url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')]`}
